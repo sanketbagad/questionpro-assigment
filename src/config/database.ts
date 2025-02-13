@@ -1,10 +1,13 @@
 import "reflect-metadata";
 import { DataSource } from "typeorm";
+import { User } from "../models/User";
+import { Order } from "../models/Order";
+import { GroceryItem } from "../models/GroceryItem";
 
 export const AppDataSource = new DataSource({
   type: "postgres",
   url: process.env.DATABASE_URL,
-  entities: [], // Add your entity files here
+  entities: [User, Order, GroceryItem],
   synchronize: true,
   logging: false,
 });
