@@ -22,7 +22,7 @@ export class User {
     enum: UserRole,
     default: UserRole.USER,
   })
-  role!: UserRole;
+  role: UserRole = UserRole.USER;
 
   @OneToMany(() => Order, (order) => order.user, { cascade: true })
   orders!: Order[];
